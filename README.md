@@ -60,6 +60,7 @@ def input_student_count(self):
 def calculate_individual_avg(self):
     for student in self.students:
         scores = student[1:]
+        student.append(sum(scores))
         avg = sum(scores) / len(scores)
         student.append(avg)
         with open("student_Score.txt", "a") as f:
